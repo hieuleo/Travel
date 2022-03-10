@@ -437,6 +437,9 @@ function handleSlide() {
 // get date:
 const dateText = $('.day-text-js');
 const secondsText = $('.seconds-text-js');
+const minutesText = $('.minutues-text-js');
+const hoursText = $('.hours-text-js');
+
 const dateNow = new Date();
 const dateStart = new Date(dateNow.getFullYear(), 0, 0);
 const diff = dateNow - dateStart;
@@ -460,6 +463,22 @@ setInterval(() => {
         secondsText.innerHTML = '00' + seconds;
     }else{
         secondsText.innerHTML = '0' + seconds;
+    }
+}, 1000);
+
+setInterval(() => {
+    if (day<10){
+        minutesText.innerHTML = '00' + minutes;
+    }else{
+        minutesText.innerHTML = '0' + minutes;
+    }
+}, 1000);
+
+setInterval(() => {
+    if (day<10){
+        hoursText.innerHTML = '00' + hours;
+    }else{
+        hoursText.innerHTML = '0' + hours;
     }
 }, 1000);
 
