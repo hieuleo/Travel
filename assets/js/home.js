@@ -440,45 +440,46 @@ const secondsText = $('.seconds-text-js');
 const minutesText = $('.minutues-text-js');
 const hoursText = $('.hours-text-js');
 
-const dateNow = new Date();
-const dateStart = new Date(dateNow.getFullYear(), 0, 0);
-const diff = dateNow - dateStart;
-const oneDay = 1000*60*60*24;
-const day = Math.floor(diff/oneDay); // math.floor return số nguyên gần nhất lớn nhất.
+function timeLive(){
+    const dateNow = new Date();
+    const dateStart = new Date(dateNow.getFullYear(), 0, 0);
+    const diff = dateNow - dateStart;
+    const oneDay = 1000*60*60*24;
+    const day = Math.floor(diff/oneDay); // math.floor return số nguyên gần nhất lớn nhất.
 
-const hours = dateNow.getHours();
-const minutes = dateNow.getMinutes();
-const seconds = dateNow.getSeconds();
-
-if (day<10){
-    dateText.innerHTML = '00'+day;
-}else if(day<100){
-    dateText.innerHTML = '0'+day;
-}else{
-    dateText.innerHTML = day;
-}
-
-setInterval(() => {
+    const hours = dateNow.getHours();
+    const minutes = dateNow.getMinutes();
+    const seconds = dateNow.getSeconds();
+    
     if (day<10){
+        dateText.innerHTML = '00'+day;
+    }else if(day<100){
+        dateText.innerHTML = '0'+day;
+    }else{
+        dateText.innerHTML = day;
+    }
+
+    if (seconds<10){
         secondsText.innerHTML = '00' + seconds;
     }else{
         secondsText.innerHTML = '0' + seconds;
     }
-}, 1000);
 
-setInterval(() => {
-    if (day<10){
+    if (minutes<10){
         minutesText.innerHTML = '00' + minutes;
     }else{
         minutesText.innerHTML = '0' + minutes;
     }
-}, 1000);
 
-setInterval(() => {
-    if (day<10){
+    if (hours<10){
         hoursText.innerHTML = '00' + hours;
     }else{
         hoursText.innerHTML = '0' + hours;
     }
-}, 1000);
+}
 
+
+
+setInterval(() => {
+    timeLive()
+}, 1000);
