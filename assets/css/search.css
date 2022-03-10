@@ -60,6 +60,7 @@
     font-weight: 900;
     letter-spacing: 2px;
     color: rgba(0, 0, 0, 0.7);
+    position: relative;
 }
 
 .search .search-header__selector{
@@ -105,7 +106,7 @@
 }
 
 .search .product-header{
-    margin-top: 102px;
+    margin-top: 30vh;
 }
 
 .search .mode-list{
@@ -159,3 +160,8 @@
     }
 }
 
+.search .price-number{
+    position: absolute;
+    top: 0;
+    right: 0;
+}

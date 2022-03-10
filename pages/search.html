@@ -253,8 +253,11 @@
                             <input type="date" name="selector-date" id="input-date" class="search-header__selector">
                         </div>
                         <div class="col c-4 search-header-item">
-                            <label for="search-header__selector" class="search-header__label">Max Price :</label>
-                            <input type="range" name="selector-price" id="input-price" class="search-header__range">
+                            <label for="search-header__selector" class="search-header__label">
+                                Max Price :
+                                <div class="price-number price-number--js">5000$</div>
+                            </label>
+                            <input type="range" name="selector-price" id="input-price" class="search-header__range" value="5000" step="10" min="0" max="10000">
                             <input type="checkbox" name="selector-check" id="input-check" class="search-header__check"> 
                             <label for="search-header__check" class="search-header__label-check">See only promotions</label>
                         </div>
