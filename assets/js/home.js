@@ -267,7 +267,7 @@ const data = {
 
     handleProductTicket(){
         const modalTicketLoca = Array.from($$('.modal-ticket__hidden-loca'));
-                console.log(modalTicketLoca)
+                // console.log(modalTicketLoca)
                 for (let i of modalTicketLoca){
             if (i.innerText == ''){
                i.style.height = '0';
@@ -433,4 +433,33 @@ function handleSlide() {
         }
     }
 }
+
+// get date:
+const dateText = $('.day-text-js');
+const secondsText = $('.seconds-text-js');
+const dateNow = new Date();
+const dateStart = new Date(dateNow.getFullYear(), 0, 0);
+const diff = dateNow - dateStart;
+const oneDay = 1000*60*60*24;
+const day = Math.floor(diff/oneDay); // math.floor return số nguyên gần nhất lớn nhất.
+
+const hours = dateNow.getHours();
+const minutes = dateNow.getMinutes();
+const seconds = dateNow.getSeconds();
+
+if (day<10){
+    dateText.innerHTML = '00'+day;
+}else if(day<100){
+    dateText.innerHTML = '0'+day;
+}else{
+    dateText.innerHTML = day;
+}
+
+setInterval(() => {
+    if (day<10){
+        secondsText.innerHTML = '00' + seconds;
+    }else{
+        secondsText.innerHTML = '0' + seconds;
+    }
+}, 1000);
 
