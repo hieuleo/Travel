@@ -7,6 +7,7 @@ const modulMenuList2 = $('.modul-menu__list-2');
 const productTicket = $('.product-ticket');
 const slideWrapper = $('.slide-wrapper');
 const modalPackages = $('.modal-packages');
+const footerContent = $('.footer-text-js')
 const modeList = $$('.mode-list--js');
 
 const data = {
@@ -219,6 +220,73 @@ const data = {
         },
     ],
 
+    footing:[
+        {
+            headings: 'OUR AGENCY',
+            content__1: 'Services',
+            content__2: 'Insurancee',
+            content__3: 'Agency',
+            content__4: 'Tourism',
+            content__5: 'Payment',
+        },
+        {
+            headings: 'PARTNERS',
+            content__1: 'Booking',
+            content__2: 'RentalCar',
+            content__3: 'HostelWorld',
+            content__4: 'Trivago',
+            content__5: 'TripAdvisor',
+        },
+        {
+            headings: 'LAST MINUTE',
+            content__1: 'London',
+            content__2: 'California',
+            content__3: 'Indonesia',
+            content__4: 'Europe',
+            content__5: 'Oceania',
+        },
+    ],
+
+    renderFooting(){
+        let html;
+        let footContents = this.footing;
+        html = footContents.map(function(footContent){
+            return`
+            <div class="col c-4">
+                    <div class="footer-item">
+                        <div class="footer-item__header">
+                            ${footContent.headings}
+                        </div>
+                        <div class="footer-item__list">
+                            <div>
+                                <i class="fas fa-chevron-right"></i>
+                                ${footContent.content__1}
+                            </div>
+                            <div>
+                                <i class="fas fa-chevron-right"></i>
+                                ${footContent.content__2}
+                            </div>
+                            <div>
+                                <i class="fas fa-chevron-right"></i>
+                                ${footContent.content__3}
+                            </div>
+                            <div>
+                                <i class="fas fa-chevron-right"></i>
+                                ${footContent.content__4}
+                            </div>
+                            <div>
+                                <i class="fas fa-chevron-right"></i>
+                                ${footContent.content__5}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+        }).join('')
+        footerContent.innerHTML = html;
+    },
+
+
     randerMenu(){
         let html1;
         let localdatas = this.dataModulMenuHome;
@@ -270,43 +338,6 @@ const data = {
         modulMenuList2.innerHTML = html2;
     },
 
-    // randerModulTicker(){
-    //     let html;
-    //     let localdatas = this.modalTicket;
-    //     html = localdatas.map(function(localdata){
-    //         return `<div class="col c-4">
-    //         <div class="modal-ticket">
-    //             <div class="modal-ticket__show">
-    //                 <img class="modal-ticket__show-img" src="${localdata.img}" alt="">
-    //                 <div class="modal-ticket__show-content">
-    //                     <img src="${localdata.icon}" alt="" class="modal-ticket__show-icon">
-    //                     <div class="modal-ticket__show-text">
-    //                         <div class="modal-ticket__show-loca">
-    //                             ${localdata.loca}
-    //                         </div>
-    //                         <div class="modal-ticket__show-package">
-    //                             ${localdata.package}
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //             <div class="modal-ticket__hidden">
-    //                 <div class="modal-ticket__hidden-header">
-    //                     Packages
-    //                 </div>
-    //                 <a href="" class="modal-ticket__hidden-loca">${localdata.city1}</a>
-    //                 <a href="" class="modal-ticket__hidden-loca">${localdata.city2}</a>
-    //                 <a href="" class="modal-ticket__hidden-loca">${localdata.city3}</a>
-    //                 <a href="" class="modal-ticket__hidden-view">
-    //                     VIEW DESTINATION
-    //                 </a>
-    //             </div>
-    //         </div>
-    //     </div>`
-    //     }).join('');
-    //     productTicket.innerHTML = html;
-    // },
-
     handleProductTicket(){
         const modalTicketLoca = Array.from($$('.modal-ticket__hidden-loca'));
                 console.log(modalTicketLoca)
@@ -315,18 +346,6 @@ const data = {
                i.style.height = '0';
             }}
     },
-
-    // randerslide(){
-    //     let html;
-    //     html = this.dataSlides.map(function(slide){
-    //         if(slide.dataSlide == 1 ){
-    //             return `<div class="slide ${slide.class} active" data-slide="${slide.dataSlide}"><img src="${slide.img}"></div>`
-    //         }else{
-    //             return `<div class="slide ${slide.class}" data-slide="${slide.dataSlide}"><img src="${slide.img}"></div>`
-    //         }
-    //     })
-    //     slideWrapper.innerHTML = html;
-    // },
     
     randerPackage(){
         let html;
@@ -420,6 +439,7 @@ const data = {
         this.handleProductTicket();
         // this.randerslide();
         this.randerPackage();
+        this.renderFooting();
     },
 }
 data.start()

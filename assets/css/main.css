@@ -1147,3 +1147,7 @@ html{
 .footer-end__item--right{
     text-align: right;
 }
+
+.footer-text-js{
+    display: flex;
+}

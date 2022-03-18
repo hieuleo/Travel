@@ -7,6 +7,7 @@ const modulMenuList2 = $('.modul-menu__list-2');
 const productTicket = $('.product-ticket');
 const slideWrapper = $('.slide-wrapper');
 const modalPackages = $('.modal-packages');
+const footerContent = $('.footer-text-js')
 
 const data = {
     dataModulMenuHome: [
@@ -177,6 +178,72 @@ const data = {
         },
     ],
 
+    footing:[
+        {
+            headings: 'OUR AGENCY',
+            content__1: 'Services',
+            content__2: 'Insurancee',
+            content__3: 'Agency',
+            content__4: 'Tourism',
+            content__5: 'Payment',
+        },
+        {
+            headings: 'PARTNERS',
+            content__1: 'Booking',
+            content__2: 'RentalCar',
+            content__3: 'HostelWorld',
+            content__4: 'Trivago',
+            content__5: 'TripAdvisor',
+        },
+        {
+            headings: 'LAST MINUTE',
+            content__1: 'London',
+            content__2: 'California',
+            content__3: 'Indonesia',
+            content__4: 'Europe',
+            content__5: 'Oceania',
+        },
+    ],
+
+    renderFooting(){
+        let html;
+        let footContents = this.footing;
+        html = footContents.map(function(footContent){
+            return`
+            <div class="col c-4">
+                    <div class="footer-item">
+                        <div class="footer-item__header">
+                            ${footContent.headings}
+                        </div>
+                        <div class="footer-item__list">
+                            <div>
+                                <i class="fas fa-chevron-right"></i>
+                                ${footContent.content__1}
+                            </div>
+                            <div>
+                                <i class="fas fa-chevron-right"></i>
+                                ${footContent.content__2}
+                            </div>
+                            <div>
+                                <i class="fas fa-chevron-right"></i>
+                                ${footContent.content__3}
+                            </div>
+                            <div>
+                                <i class="fas fa-chevron-right"></i>
+                                ${footContent.content__4}
+                            </div>
+                            <div>
+                                <i class="fas fa-chevron-right"></i>
+                                ${footContent.content__5}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+        }).join('')
+        footerContent.innerHTML = html;
+    },
+
     randerMenu(){
         let html1;
         let localdatas = this.dataModulMenuHome;
@@ -283,7 +350,7 @@ const data = {
                 return `<div class="slide ${slide.class}" data-slide="${slide.dataSlide}"><img src="${slide.img}"></div>`
             }
         })
-        slideWrapper.innerHTML = html;
+        slideWrapper.outerhtml = html;
     },
     
     randerPackage(){
@@ -378,6 +445,7 @@ const data = {
         this.handleProductTicket();
         this.randerslide();
         this.randerPackage();
+        this.renderFooting();
     },
 }
 data.start()
