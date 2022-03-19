@@ -20,6 +20,7 @@ html{
 
 
 /* header */
+
 .header::after{
     content : "";
     display: block;
@@ -207,7 +208,7 @@ html{
     line-height: 1.4rem;
     text-decoration: none;
     display: inline-block;
-    padding: 12px 6px;
+    padding: 12px 2px;
     text-transform: uppercase;
     text-align: center;
     min-width: 78px;
@@ -267,6 +268,7 @@ html{
         display: flex;
         transform: translateX(-100%);
         opacity: 1;
+        z-index: 50;
     }
 /* show modul menu */
 

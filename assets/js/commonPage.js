@@ -1,14 +1,8 @@
-const $ = document.querySelector.bind(document)
-const $$ = document.querySelectorAll.bind(document)
 
 //render data:
 const modulMenuList1 = $('.modul-menu__list-1');
 const modulMenuList2 = $('.modul-menu__list-2');
-const productTicket = $('.product-ticket');
-const slideWrapper = $('.slide-wrapper');
-const modalPackages = $('.modal-packages');
-const footerContent = $('.footer-text-js')
-const slideContentElement = $('.slide-content-js')
+const footerContent = $('.footer-text-js');
 
 const data = {
     dataModulMenuHome: [

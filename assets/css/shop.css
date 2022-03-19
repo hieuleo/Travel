@@ -1,4 +1,132 @@
+:root{
+    --text-color:#9a9a9a;
+    --black-color:#555555;
+}
+
+.shop {
+    font-family: 'Poppins', sans-serif;
+    box-sizing:border-box;
+}
+
 .shop .header{
     background-image: url(../img/shop/heading.jpg);
 }
 
+.shop .container{
+    padding: 64px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.shop .shop__product{
+    letter-spacing: 1px;
+    margin: 0 44px 41px 0;
+}
+
+.shop .shop__product__header{
+    position: relative;
+}
+
+.shop .shop__product img{
+    width: 100%;
+    z-index: 1;
+}
+
+.shop__product__link{
+    z-index: 1;
+}
+
+.shop .shop__product .sale{
+    background-color: #1bbc9b;
+    padding: 9px;
+    line-height: 13px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: normal;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.shop .shop__product__foot .text-loca {
+    font-size: 20px;
+    line-height: 20px;
+    padding: 10px 0px;
+    font-weight: normal;
+    color: var(--black-color);
+    text-transform: capitalize;
+}
+
+.shop .shop__product__foot .icon > i{
+    font-size: 1.3em;
+    color: var(--text-color)
+}
+
+.shop .shop__product__foot .price {
+    margin: 20px 0 8px;
+}
+
+.shop .shop__product__foot .price__cast{
+    display: inline-block;
+    font-size: 1.6em;
+    line-height: 1.6em;
+    font-weight: 400;
+    color: var(--text-color);
+} 
+
+.price__cast--start{
+    opacity: .5;
+    text-decoration: line-through;
+}
+
+.price__cast--end{
+    text-decoration: underline;
+}
+
+.shop .shop__product .select{
+    margin-top: 13px;
+    display: inline-block;
+    
+}
+
+.shop .shop__product .select >a{
+    border: 1px solid rgb(241, 241, 241);
+}
+
+.shop .shop__product .select >a,
+.shop .shop__product .select >i{
+    font-size: 13px;
+    line-height: 13px;
+    padding: 8px 13px;
+    color: var(--text-color);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.shop .shop__product .select .select__link{
+    display: none;
+}
+
+
+.shop .shop__product .select >i{
+    padding: 8px 0px;
+    display: none;
+}
+
+.shop .shop__product .shop-add-js.active + i,
+.shop .shop__product .shop-add-js.active ~.select__link{
+    display: inline-block;
+}
+
+.shop .shop__product .select__link .shop__select__view{
+    display: inline-block;
+    font-size: 13px;
+    line-height: 13px;
+    padding: 8px 24px;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #1bbc9b;
+    margin: 15px 0;
+}
