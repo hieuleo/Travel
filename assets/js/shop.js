@@ -276,6 +276,3 @@ function handleShopClick() {
 }
 
 handleShopClick();
-
-const ahihi = $$('.hix')
-//uodate
