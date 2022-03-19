@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Search ➰</title>
+    <title>SHOP ⛵</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../assets/css/search.css">
+    <link rel="stylesheet" href="../assets/css/shop.css">
+    <link rel="stylesheet" href="../assets/css/headingPage.css">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/grid.css">
@@ -17,9 +18,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="search">
+    <div class="shop">
         <!-- header -->
         <div class="header">
+
+            <div class="content-pages">
+                <p>Shop</p>
+            </div>
+
             <!-- header-navigation -->
             <div class="grid">
                 <div class="row">
@@ -219,80 +225,21 @@
                 </div>
             </div>
             <!-- header-content  -->
-            <div class="grid wide">
+            <div class="grid">
                 <div class="row">
-                    <div class="header-content">
-                        <div class="header-content__subheader">
-                            <p>OUR PACKAGES</p>
-                        </div>
-                        <div class="header-content__header">
-                            <p>Search your Holiday</p>
-                        </div>
-                    </div>
-                </div>
-                <form action="" class="search-header__container">
-                    <div class="row">
-                        <div class="col c-4 search-header-item">
-                            <label for="search-header__selector" class="search-header__label">Select Your Destination :</label>
-                            <div class="selector-block">
-                                <select name="selector-tour" id="selector-tour" class="search-header__selector">
-                                    <option class="search-option" value="all">All Destination</option>
-                                    <option class="search-option" value="europe">europe</option>
-                                    <option class="search-option" value="italy">-Italy</option>
-                                    <option class="search-option" value="netherlands">-Netherlands</option>
-                                    <option class="search-option" value="asia">Asia</option>
-                                    <option class="search-option" value="thailand">-Thailand</option>
-                                    <option class="search-option" value="united states">United States</option>
-                                    <option class="search-option" value="oceania">Oceania</option>
-                                </select>
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                        </div>
-                        <div class="col c-4 search-header-item">
-                            <label for="input-date" class="search-header__label">Select Your Date :</label>
-                            <input type="date" name="selector-date" id="input-date" class="search-header__selector">
-                        </div>
-                        <div class="col c-4 search-header-item">
-                            <label for="search-header__selector" class="search-header__label">
-                                Max Price :
-                                <div class="price-number price-number--js">5000$</div>
-                            </label>
-                            <input type="range" name="selector-price" id="input-price" class="search-header__range" value="5000" step="10" min="0" max="10000">
-                            <input type="checkbox" name="selector-check" id="input-check" class="search-header__check"> 
-                            <label for="search-header__check" class="search-header__label-check">See only promotions</label>
-                        </div>
-                    </div>
-                </form>
-                <div class="row">
-                    <div class="mode-list">
-                        <div>
-                            <i class="fa-solid fa-list-ul mode-list--js"></i>
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-braille active mode-list--js"></i>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
     
         <!-- container -->
         <div class="container">
-    
-            <!-- tag-container-2 -->
-            <div class="grid wide">
-                <div class="product-header row">
-                    <div class="col c-12">PROMOTIONS</div>
-                </div>
+
+             <!-- poster-2 -->
+             <div class="grid">
                 <div class="row">
-                    <div class="product-sub-header col c-12">
-                        <div class="product-sub-header-contant">OUR PACKAGES</div> 
-                    </div>
+                    
                 </div>
-                <div class="row modal-packages">
-                    <!-- modal-tour -->     
-                </div>
-    
             </div>
         </div>
     
@@ -321,7 +268,7 @@
                     <div class="col c-6">
                         <div class="footer-content">
                             <div class="footer-travel">
-                                <img src="../assets/img/footer/logo-color.png" alt="" class="footer-travel__img">
+                                <img src="./assets/img/footer/logo-color.png" alt="" class="footer-travel__img">
                                 <div class="footer-travel__content">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut diam et nibh condimentum venenatis eu ac magnasin. Quisque interdum est mauris, eget ullamcorper.
                                 </div>
@@ -352,6 +299,6 @@
             </div>
         </div>
     </div>
-    <script src="../assets/js/packages.js"></script>
+    <script src="../assets/js/commonPage.js"></script>
 </body>
 </html>

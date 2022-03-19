@@ -8,6 +8,7 @@ const productTicket = $('.product-ticket');
 const slideWrapper = $('.slide-wrapper');
 const modalPackages = $('.modal-packages');
 const footerContent = $('.footer-text-js')
+const slideContentElement = $('.slide-content-js')
 
 const data = {
     dataModulMenuHome: [
@@ -60,6 +61,7 @@ const data = {
             color:  'phuket',
         },
     ],
+    
     modalTicket:[
         {
             img: './assets/img/location/europe.jpg',
@@ -116,6 +118,7 @@ const data = {
             city3: '',
         }, 
     ],
+
     dataSlides: [
         {
             class:'slide-1',
@@ -138,6 +141,37 @@ const data = {
             img:'./assets/img/slide/slide-4.jpg',
         },
     ],
+
+    slideContents:[
+        {
+            icon: './assets/img/slide/icon-1.png',
+            heading: 'World Tour',
+            content: 'Lorem ipsum dolor sit amet conse ctetur adip iscing elit Proin rhonc us urna dictum.',
+            links: {
+                contentLink: 'View More',
+                href: '#',
+            }
+        },
+        {
+            icon: './assets/img/slide/iocn-2.png',
+            heading: 'Cruises',
+            content: 'Lorem ipsum dolor sit amet conse ctetur adip iscing elit Proin rhonc us urna dictum.',
+            links: {
+                contentLink: 'View More',
+                href: '#',
+            }
+        },
+        {
+            icon: './assets/img/slide/icon-3.png',
+            heading: 'Best Tours',
+            content: 'Lorem ipsum dolor sit amet conse ctetur adip iscing elit Proin rhonc us urna dictum.',
+            links: {
+                contentLink: 'View More',
+                href: '#',
+            }
+        }
+    ],
+
     dataPackage:[
         {
             img: './assets/img/product-2/berlin.jpg',
@@ -350,7 +384,7 @@ const data = {
                 return `<div class="slide ${slide.class}" data-slide="${slide.dataSlide}"><img src="${slide.img}"></div>`
             }
         })
-        slideWrapper.outerhtml = html;
+        slideWrapper.innerHTML = html;
     },
     
     randerPackage(){
@@ -438,7 +472,30 @@ const data = {
         }).join('');
         modalPackages.innerHTML = html;
     },
-    
+
+    renderContentSlide(){
+        let html;  
+        html= this.slideContents.map(function(slideContent){
+            return `
+            <div class="col c-4">
+                    <div class="slide-footer">
+                        <img src="${slideContent.icon}" alt="" class="slide-footer-icon">
+                        <div class="slide-footer__content">
+                            <div class="slide-footer__content-header">
+                            ${slideContent.heading}
+                            </div>
+                            <div class="slide-footer__content-body">
+                            ${slideContent.content}
+                            </div>
+                            <a href="${slideContent.links.href}" class="slide-footer__content-view">${slideContent.links.contentLink}</a>
+                        </div>
+                    </div>
+                </div>
+            `
+        }).join('')
+        slideContentElement.innerHTML = html;
+    },
+
     start(){
         this.randerMenu();
         this.randerModulTicker();
@@ -446,9 +503,13 @@ const data = {
         this.randerslide();
         this.randerPackage();
         this.renderFooting();
+        this.renderContentSlide();
     },
 }
+
 data.start()
+
+
 
 // slide:
 const slides = Array.from($$('.slide'));
@@ -470,7 +531,6 @@ for(let i of slideLable){
                 slideTime = slideTime + 1;
             }else{
                 slideTime = 1;
-        
             }
             handleSlide();
         }, 5000);
